@@ -1,0 +1,44 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfilLulusanController;
+use App\Http\Controllers\CplController;
+use App\Http\Controllers\BahanKajianController;
+
+
+
+// Tambahkan potongan ini ke routes/web.php
+
+
+Route::get('/profil-lulusan', function () {
+    return view('profil-lulusan');
+})->name('profil-lulusan');
+
+Route::get('/cpl', function () {
+    return view('cpl');
+})->name('cpl');
+Route::get('/cpl', [CplController::class, 'index'])->name('cpl');
+Route::post('/cpl', [CplController::class, 'store'])->name('cpl.store');
+Route::delete('/cpl/{cpl}', [CplController::class, 'destroy'])->name('cpl.destroy');
+Route::get('/bahan-kajian', function () {
+    return view('bahan-kajian');
+})->name('bahan-kajian');
+
+
+Route::post('/profil-lulusan', [ProfilLulusanController::class, 'store'])->name('profil-lulusan.store');
+Route::delete('/profil-lulusan/{profil_lulusan}', [ProfilLulusanController::class, 'destroy'])->name('profil-lulusan.destroy');
+
+
+Route::get('/profil-lulusan', [ProfilLulusanController::class, 'index'])->name('profil-lulusan');
+
+Route::resource('bahan-kajian', BahanKajianController::class)
+    ->except(['show']); // 'show' biasanya nggak dipakai untuk model kecil begini
+
+Route::get('/', function () {
+    return view('profil-lulusan');
+});
+
+
+
+Route::resource('bahan-kajian', BahanKajianController::class)
+    ->except(['create', 'show', 'edit']);

@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfilLulusanController;
 use App\Http\Controllers\CplController;
 use App\Http\Controllers\BahanKajianController;
 
+use App\Http\Controllers\CplBahanKajianController;
 
 
 // Tambahkan potongan ini ke routes/web.php
@@ -42,3 +43,16 @@ Route::get('/', function () {
 
 Route::resource('bahan-kajian', BahanKajianController::class)
     ->except(['create', 'show', 'edit']);
+
+
+
+Route::get('/cpl-bahan-kajian', [CplBahanKajianController::class, 'index'])
+    ->name('cpl-bahan-kajian.index');
+
+// routes/web.php
+Route::post('/cpl-bahan-kajian', [CplBahanKajianController::class, 'store'])
+    ->name('cpl-bahan-kajian.store');
+
+// routes/web.php
+Route::delete('/cpl-bahan-kajian/{cpl}/{bahanKajian}', [CplBahanKajianController::class, 'destroy'])
+    ->name('cpl-bahan-kajian.destroy');

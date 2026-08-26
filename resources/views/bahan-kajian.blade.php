@@ -20,31 +20,46 @@
             </h2>
         </div>
 
-        {{-- TOMBOL TAMBAH --}}
-        <button
-            type="button"
-            onclick="openTambahModal()"
-            class="inline-flex items-center gap-2 rounded-lg
+        {{-- GRUP TOMBOL --}}
+        <div class="flex items-center gap-2">
+
+            {{-- a href ke CPL-Bahan Kajian --}}
+            <a href="{{ route('cpl-bahan-kajian.index') }}"
+                class="inline-flex items-center gap-2 rounded-lg
+                   bg-blue-500 px-4 py-2.5 text-sm font-medium
+                   text-white hover:bg-navy-700">
+
+
+
+                CPL - Bahan Kajian
+            </a>
+
+            {{-- TOMBOL TAMBAH --}}
+            <button
+                type="button"
+                onclick="openTambahModal()"
+                class="inline-flex items-center gap-2 rounded-lg
                    bg-navy-800 px-4 py-2.5 text-sm font-medium
                    text-white hover:bg-navy-700">
 
-            <svg xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                class="h-4 w-4">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    class="h-4 w-4">
 
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 4.5v15m7.5-7.5h-15" />
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 4.5v15m7.5-7.5h-15" />
 
-            </svg>
+                </svg>
 
-            Tambah Bahan Kajian
+                Tambah Bahan Kajian
+            </button>
 
-        </button>
+        </div>
 
     </div>
 

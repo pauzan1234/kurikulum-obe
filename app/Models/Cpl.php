@@ -26,4 +26,15 @@ class Cpl extends Model
             'id_pl'
         );
     }
+    public function bahanKajians()
+    {
+        return $this->belongsToMany(
+            Bahankajian::class,
+            'cpl_bahan_kajian',   // nama tabel pivot
+            'id_cpl',             // foreign key pivot yang mengarah ke tabel cpl
+            'id_bahan_kajian'     // foreign key pivot yang mengarah ke tabel bahan_kajian
+        )
+            ->withPivot('bobot_kontribusi', 'catatan')
+            ->withTimestamps();
+    }
 }

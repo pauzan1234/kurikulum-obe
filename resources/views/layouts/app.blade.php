@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Kurikulum OBE') | SIAKAD Prodi</title>
+    <title>@yield('title', 'Kurikulum OBE') | Teknik Komputer</title>
 
     <!-- Tailwind via CDN (ganti dengan build Vite untuk production) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -95,6 +95,7 @@
                         ['label' => 'Profil Lulusan', 'route' => 'profil-lulusan', 'icon' => 'user'],
                         ['label' => 'CPL', 'route' => 'cpl', 'icon' => 'target'],
                         ['label' => 'Bahan Kajian', 'route' => 'bahan-kajian.index', 'icon' => 'book'],
+                        ['label' => 'Matakuliah', 'route' => 'matakuliah.index', 'icon' => 'book'],
                         ];
                         @endphp
 
@@ -119,6 +120,11 @@
                                     @case('target')
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                                    </svg>
+                                    @break
+                                    @case('book')
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
                                     </svg>
                                     @break
                                     @case('book')

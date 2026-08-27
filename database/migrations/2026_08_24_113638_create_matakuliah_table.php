@@ -20,7 +20,8 @@ return new class extends Migration
                 ->constrained('semester')
                 ->cascadeOnDelete();
             // Ganti ->nullable() dengan ->constrained('program_studis') kalau tabel prodi sudah ada
-            $table->foreignId('id_prodi')->nullable();
+            //$table->foreignId('id_prodi')->nullable();
+            $table->foreignId('id_prodi')->constrained('prodi')->onDelete('cascade');
             $table->timestamps();
         });
     }

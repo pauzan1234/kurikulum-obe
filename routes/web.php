@@ -6,7 +6,7 @@ use App\Http\Controllers\CplController;
 use App\Http\Controllers\BahanKajianController;
 
 use App\Http\Controllers\CplBahanKajianController;
-
+use App\Http\Controllers\MataKuliahController;
 
 // Tambahkan potongan ini ke routes/web.php
 
@@ -56,3 +56,13 @@ Route::post('/cpl-bahan-kajian', [CplBahanKajianController::class, 'store'])
 // routes/web.php
 Route::delete('/cpl-bahan-kajian/{cpl}/{bahanKajian}', [CplBahanKajianController::class, 'destroy'])
     ->name('cpl-bahan-kajian.destroy');
+
+Route::get('/matakuliah', [MataKuliahController::class, 'index'])
+    ->name('matakuliah.index');
+Route::get('/tambah_matakuliah', [MataKuliahController::class, 'create'])
+    ->name('matakuliah.create');
+
+Route::post('/matakuliah/simpan', [MataKuliahController::class, 'store'])->name('matakuliah.store');
+Route::get('/matakuliah/{matakuliah}/edit', [MataKuliahController::class, 'edit'])->name('matakuliah.edit');
+Route::put('/matakuliah/{matakuliah}', [MataKuliahController::class, 'update'])->name('matakuliah.update');
+Route::delete('/matakuliah/{matakuliah}', [MataKuliahController::class, 'destroy'])->name('matakuliah.destroy');

@@ -37,4 +37,9 @@ class Cpl extends Model
             ->withPivot('bobot_kontribusi', 'catatan')
             ->withTimestamps();
     }
+    // app/Models/Cpl.php  -> tambahkan method ini di dalam class Cpl
+    public function cpmks()
+    {
+        return $this->hasMany(Cpmk::class, 'id_cpl', 'id_cpl');
+    }
 }

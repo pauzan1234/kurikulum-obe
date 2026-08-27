@@ -11,7 +11,9 @@ class MataKuliahController extends Controller
 {
     public function index()
     {
-        $mataKuliah = MataKuliah::orderBy('id', 'asc')->get();
+        $mataKuliah = MataKuliah::orderBy('semester_id')
+            ->orderBy('nama_mk')
+            ->get();
 
         return view('matakuliah', compact('mataKuliah'));
     }
@@ -63,5 +65,21 @@ class MataKuliahController extends Controller
     {
         $matakuliah->delete();
         return redirect()->route('matakuliah.index')->with('success', 'Mata kuliah berhasil dihapus.');
+    }
+
+    public function perSemester()
+    {
+        $mataKuliah = MataKuliah::orderBy('semester_id')->orderBy('kode_mk')->get();
+
+        // Kelompokkan berdasarkan semester_id
+        $grouped = $mataKuliah->groupBy('semester_id')->sortKeys();
+
+        // Hitung total SKS per semester
+        $totalPerSemester = $grouped->map(fn($items) => $items->sum('sks'));
+
+        // Total SKS keseluruhan
+        $totalKeseluruhan = $mataKuliah->sum('sks');
+
+        return view('matakuliah.per-semester', compact('grouped', 'totalPerSemester', 'totalKeseluruhan'));
     }
 }

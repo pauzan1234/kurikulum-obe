@@ -42,10 +42,11 @@
                 </div>
 
                 <div>
-                    <label for="semester" class="block text-sm font-medium text-gray-700">Semester</label>
-                    <input type="number" name="semester" id="semester" value="{{ old('semester', $mataKuliah->semester) }}" min="1" max="14"
-                        class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 @error('semester') border-red-500 @enderror">
-                    @error('semester')
+                    <label for="semester_id" class="block text-sm font-medium text-gray-700">Semester</label>
+                    <input type="number" name="semester_id" id="semester_id"
+                        value="{{ old('semester_id', $mataKuliah->semester_id) }}" min="1" max="14"
+                        class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 @error('semester_id') border-red-500 @enderror">
+                    @error('semester_id')
                     <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
                     @enderror
                 </div>

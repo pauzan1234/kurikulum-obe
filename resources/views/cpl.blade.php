@@ -14,15 +14,24 @@
             <p class="text-sm text-slate-500">Kurikulum &rarr; CPL</p>
             <h2 class="mt-1 font-serif text-2xl font-semibold text-navy-900">Daftar CPL</h2>
         </div>
-        <button
-            @click="showModal = true"
-            type="button"
-            class="inline-flex items-center gap-2 rounded-lg bg-navy-800 px-4 py-2.5 text-sm font-medium text-white hover:bg-navy-700">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-            </svg>
-            Tambah CPL
-        </button>
+        <div class="flex items-center gap-2">
+            <a href="{{ route('cpmk.index') }}"
+                class="inline-flex items-center gap-2 rounded-lg border border-navy-800 px-4 py-2.5 text-sm font-medium text-navy-800 hover:bg-navy-50">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                CPL-CPMK
+            </a>
+            <button
+                @click="showModal = true"
+                type="button"
+                class="inline-flex items-center gap-2 rounded-lg bg-navy-800 px-4 py-2.5 text-sm font-medium text-white hover:bg-navy-700">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+                Tambah CPL
+            </button>
+        </div>
     </div>
 
     <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">

@@ -8,6 +8,8 @@ use App\Http\Controllers\BahanKajianController;
 use App\Http\Controllers\CplBahanKajianController;
 use App\Http\Controllers\MataKuliahController;
 
+// routes/web.php
+use App\Http\Controllers\CpmkController;
 // Tambahkan potongan ini ke routes/web.php
 
 
@@ -66,3 +68,10 @@ Route::post('/matakuliah/simpan', [MataKuliahController::class, 'store'])->name(
 Route::get('/matakuliah/{matakuliah}/edit', [MataKuliahController::class, 'edit'])->name('matakuliah.edit');
 Route::put('/matakuliah/{matakuliah}', [MataKuliahController::class, 'update'])->name('matakuliah.update');
 Route::delete('/matakuliah/{matakuliah}', [MataKuliahController::class, 'destroy'])->name('matakuliah.destroy');
+Route::get('/mata-kuliah/per-semester', [MataKuliahController::class, 'perSemester'])
+    ->name('matakuliah.persemester');
+
+
+Route::get('/cpl-cpmk', [CpmkController::class, 'index'])->name('cpmk.index');
+Route::post('/cpl-cpmk', [CpmkController::class, 'store'])->name('cpmk.store');
+Route::delete('/cpl-cpmk/{cpmk}', [CpmkController::class, 'destroy'])->name('cpmk.destroy');
